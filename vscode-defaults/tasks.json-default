@@ -1,0 +1,42 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Local: Clean, Install, Undeploy, Deploy",
+            "type": "shell",
+            "command": "./scripts/local_clean_install_undeploy_deploy.sh",
+            "group": {
+                "kind": "build",
+                "isDefault":true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "options": {
+                "env": {
+                    "JSCP_LOCAL_MANAGER_URL": "...",
+                    "JSCP_LOCAL_SERVER_NAME": "..."
+                }
+            }
+        },
+        {
+            "label": "Azure: Clean, Install, Deploy",
+            "type": "shell",
+            "command": "./scripts/azure_clean_install_deploy.sh",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "options": {
+                "env": {
+                    "JSCP_AZURE_RESOURCE_GROUP_NAME": "...",
+                    "JSCP_AZURE_APP_SERVICE_NAME": "..."
+                }
+            }
+        }
+    ]
+}
