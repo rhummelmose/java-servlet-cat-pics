@@ -34,8 +34,9 @@ public class CatPics extends HttpServlet {
 			ImageIO.write(catPic, "gif", out);
 			out.close();
 		}
-		catch(IOException e) {
-			e.printStackTrace();
+		catch (IOException e) {
+			// Ignore expetion
+			logger.debug("IOException encountered. We ignore it since it's just because the client closed the conneection prematurely.");
 		}
 	}
 }
