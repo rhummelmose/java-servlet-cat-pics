@@ -1,7 +1,5 @@
 #!/bin/bash
 
-env
-
 if [ -z "${JSCP_LOCAL_MANAGER_URL}" ]; then
   # Cancel deployment as we have no target local manager URL
   echo "Cancelling deploymeent as no target local manager URL was found."
